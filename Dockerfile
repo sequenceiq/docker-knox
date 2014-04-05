@@ -14,3 +14,7 @@ ENV PATH $PATH:$KNOX_HOME/bin
 # start the embedded LDAP and the gatewat
 RUN java -jar bin/ldap.jar conf &
 RUN java -jar bin/gateway.jar
+
+
+# bootstrap 
+CMD ["/etc/bootstrap.sh", "-d"]
