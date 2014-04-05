@@ -11,7 +11,7 @@ RUN cd /tmp/knox && unzip knox.zip -d /usr/local
 ENV KNOX_HOME /usr/local/knox
 ENV PATH $PATH:$KNOX_HOME/bin
 
-# start the embedded LDAP and the gatewat
+# start the embedded LDAP and the gateway
 RUN java -jar bin/ldap.jar conf &
 RUN java -jar bin/gateway.jar
 
