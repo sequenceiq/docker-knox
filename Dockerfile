@@ -15,11 +15,9 @@ ENV PATH $PATH:$KNOX_HOME/bin
 RUN java -jar bin/ldap.jar conf &
 RUN java -jar bin/gateway.jar
 
-# bootstrap 
-ADD bootstrap.sh /etc/bootstrap.sh
-RUN chown root:root /etc/bootstrap.sh
-RUN chmod 700 /etc/bootstrap.sh
+# bootstrap-knox
+ADD bootstrap-knox.sh /etc/bootstrap-knox.sh
+RUN chown root:root /etc/bootstrap-knox.sh
+RUN chmod 700 /etc/bootstrap-knox.sh
 
-ENV BOOTSTRAP /etc/bootstrap.sh
-
-CMD ["/etc/bootstrap.sh", "-d"]
+CMD ["/etc/bootstrap-knox.sh", "-bash"]
