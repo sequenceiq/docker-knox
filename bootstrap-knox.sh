@@ -13,8 +13,9 @@ $HADOOP_PREFIX/sbin/start-dfs.sh
 $HADOOP_PREFIX/sbin/start-yarn.sh
 
 # knox bootstrap 
-#java -jar bin/ldap.jar conf &
-#java -jar bin/gateway.jar
+
+java -jar bin/ldap.jar conf &>/tmp/knox/ldap.log &
+java -jar bin/gateway.jar &>/tmp/knox/gateway.log &
 
 if [[ $1 == "-d" ]]; then
   while true; do sleep 1000; done
