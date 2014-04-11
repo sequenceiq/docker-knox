@@ -18,8 +18,13 @@ mkdir -p /var/log/knox
 java -jar $GATEWAY_HOME/bin/ldap.jar $GATEWAY_HOME/conf &>/var/log/knox/ldap.out &
 
 cd $GATEWAY_HOME
+mkdir -p conf/security
+echo '#1.0#' > conf/security/master
+echo 'UjFkVDZNS0N5Yzg9Ojp1WVNwREtFeG9KcHN1QjFYU1JDRkh3PT06OldTaUdOT1U5RUw0ejZ5SUM0VE5LMVE9PQ==' >> conf/security/master
 bin/gateway.sh setup root
 bin/gateway.sh start
+
+
 
 if [[ $1 == "-d" ]]; then
   while true; do sleep 1000; done
