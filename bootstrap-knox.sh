@@ -12,10 +12,12 @@ service sshd start
 $HADOOP_PREFIX/sbin/start-dfs.sh
 $HADOOP_PREFIX/sbin/start-yarn.sh
 
-# knox bootstrap 
+# knox bootstrap
 
-java -jar bin/ldap.jar conf &>/tmp/knox/ldap.log &
-java -jar bin/gateway.jar &>/tmp/knox/gateway.log &
+mkdir -p /var/log/knox
+java -jar $GATEWAY_HOME/bin/ldap.jar $GATEWAY_HOME/conf &>/var/log/knox/ldap.out &
+$GATEWAY_HOME/bin/gateway.sh setup root
+$GATEWAY_HOME/bin/gateway.sh start
 
 if [[ $1 == "-d" ]]; then
   while true; do sleep 1000; done
