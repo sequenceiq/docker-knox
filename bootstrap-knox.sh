@@ -16,8 +16,10 @@ $HADOOP_PREFIX/sbin/start-yarn.sh
 
 mkdir -p /var/log/knox
 java -jar $GATEWAY_HOME/bin/ldap.jar $GATEWAY_HOME/conf &>/var/log/knox/ldap.out &
-$GATEWAY_HOME/bin/gateway.sh setup root
-$GATEWAY_HOME/bin/gateway.sh start
+
+cd $GATEWAY_HOME
+bin/gateway.sh setup root
+bin/gateway.sh start
 
 if [[ $1 == "-d" ]]; then
   while true; do sleep 1000; done
