@@ -20,6 +20,9 @@ java -jar $GATEWAY_HOME/bin/ldap.jar $GATEWAY_HOME/conf &>/var/log/knox/ldap.out
 cd $GATEWAY_HOME
 mkdir -p conf/security
 echo '#1.0#' > conf/security/master
+
+# Make sure to read and understand the "Persisting the Master Secret" paragraph : http://knox.incubator.apache.org/books/knox-0-3-0/knox-0-3-0.html
+
 echo 'UjFkVDZNS0N5Yzg9Ojp1WVNwREtFeG9KcHN1QjFYU1JDRkh3PT06OldTaUdOT1U5RUw0ejZ5SUM0VE5LMVE9PQ==' >> conf/security/master
 bin/gateway.sh setup root
 bin/gateway.sh start
