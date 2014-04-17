@@ -1,3 +1,8 @@
+# Create a SequenceIQ Apache Knox base image
+#
+# docker build -t sequenceiq/knox-docker .
+
+
 FROM sequenceiq/dev-docker
 MAINTAINER SequenceIQ
 
