@@ -1,4 +1,4 @@
-FROM sequenceiq/hadoop-docker
+FROM sequenceiq/dev-docker
 MAINTAINER SequenceIQ
 
 # get unzip and knox-0.3.0-incubating
