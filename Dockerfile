@@ -6,7 +6,7 @@
 FROM sequenceiq/dev-docker
 MAINTAINER SequenceIQ
 
-# get unzip and knox-0.3.0-incubating
+# get unzip and knox-0.4.0-incubating
 RUN yum install -y unzip
 RUN mkdir /tmp/knox
 RUN cd /tmp/knox && curl -o knox-incubating-0.4.0.rpm http://xenia.sote.hu/ftp/mirrors/www.apache.org/incubator/knox/0.4.0-incubating/knox-incubating-0.4.0.rpm
